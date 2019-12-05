@@ -15,6 +15,7 @@ You can get some clues here : https://ultimatecourses.com/blog/all-about-immutab
 
 const setItemQuantity = (item, quantity) => {
   const itemWithQuantity = item;
+  // this line imply a mutation
   itemWithQuantity.quantity = quantity;
   return itemWithQuantity;
 };
