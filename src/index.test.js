@@ -1,5 +1,6 @@
 import setItemQuantity from './1_add_a_property';
 import addItemToBasket from './2_add_to_an_array';
+import setFavorite from './3_update_item_in_array';
 
 describe('1_add_a_property', () => {
   it('set the item quantity', () => {
@@ -65,6 +66,63 @@ describe('2_add_to_an_array', () => {
       {
         name: 'banana',
         category: 'fruit',
+      },
+    ]);
+  });
+});
+
+describe('3_update_item_in_array', () => {
+  it('set favorite', () => {
+    const basket = [
+      {
+        name: 'banana',
+        category: 'fruit',
+        favorite: true,
+      },
+      {
+        name: 'cookie',
+        category: 'biscuit',
+        favorite: false,
+      },
+    ];
+    expect(setFavorite(basket, 'cookie')).toEqual([
+      {
+        name: 'banana',
+        category: 'fruit',
+        favorite: false,
+      },
+      {
+        name: 'cookie',
+        category: 'biscuit',
+        favorite: true,
+      },
+    ]);
+  });
+  it('does not mutate the parameter', () => {
+    const basket = [
+      {
+        name: 'banana',
+        category: 'fruit',
+        favorite: true,
+      },
+      {
+        name: 'cookie',
+        category: 'biscuit',
+        favorite: false,
+      },
+    ];
+
+    setFavorite(basket, 'cookie');
+    expect(basket).toEqual([
+      {
+        name: 'banana',
+        category: 'fruit',
+        favorite: true,
+      },
+      {
+        name: 'cookie',
+        category: 'biscuit',
+        favorite: false,
       },
     ]);
   });
