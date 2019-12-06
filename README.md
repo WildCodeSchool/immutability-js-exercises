@@ -1,4 +1,4 @@
-# A boilerplate to build JS exercises
+# Immutability JS exercises
 
 ## Fork, clone and install
 
